@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOCliente.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Venta.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOCategoria.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOUsuario.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOEmpleado.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Controlador/Ferreteria_MVC.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Usuario.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAODetalleCompra.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAODetalleVenta.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Producto.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Empleado.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Compra.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOVenta.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/DetalleCompra.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOProducto.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/Categoria.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Modelo/DetalleVenta.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/DAO/DAOCompra.java</file>
+            <file>file:/C:/Users/Estudiante/Music/Ferreteria_MVC/src/Util/ConexionDB.java</file>
+        </group>
+    </open-files>
+</project-private>
