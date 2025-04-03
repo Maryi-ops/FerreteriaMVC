@@ -11,16 +11,16 @@ import java.util.List;
  */
 public class Venta {
     private int idVenta;
-    private Cliente cliente; // Relación con Cliente
-    private Empleado empleado; // Relación con Empleado
+    private int idCliente; // Relación con Cliente
+    private int idEmpleado; // Relación con Empleado
     private Date fechaVenta;
     private float totalVenta;
     private List<DetalleVenta> detalles; // Relación con DetalleVenta
-    
-      public Venta(int idVenta, Cliente cliente, Empleado empleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
+
+    public Venta(int idVenta, int idCliente, int idEmpleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
         this.idVenta = idVenta;
-        this.cliente = cliente;
-        this.empleado = empleado;
+        this.idCliente = idCliente;
+        this.idEmpleado = idEmpleado;
         this.fechaVenta = fechaVenta;
         this.totalVenta = totalVenta;
         this.detalles = detalles;
@@ -28,7 +28,7 @@ public class Venta {
 
     public Venta() {
     }
-
+    
     public int getIdVenta() {
         return idVenta;
     }
@@ -37,20 +37,20 @@ public class Venta {
         this.idVenta = idVenta;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public Date getFechaVenta() {
@@ -76,6 +76,6 @@ public class Venta {
     public void setDetalles(List<DetalleVenta> detalles) {
         this.detalles = detalles;
     }
-
-  
+    
+     
 }
