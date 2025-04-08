@@ -9,6 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Estudiante
@@ -32,17 +36,35 @@ public class VentaDAO {
         stmt.executeUpdate();
     }
 }
+public List<Venta> leerTodasVentas() throws SQLException {
+        String sql = "SELECT * FROM Ventas";
+        List<Venta> ventas = new ArrayList<>();
 
+        try (Connection c = ConexionDB.getConnection();
+             PreparedStatement stmt = c.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Venta venta = new Venta();
+                venta.setIdCliente(rs.getInt("id_cliente"));
+                venta.setIdEmpleado(rs.getInt("id_empleado"));
+                venta.setFechaVenta(rs.getTimestamp("fecha_venta"));
+                venta.setTotalVenta(rs.getFloat("total_venta"));
+                ventas.add(venta);
+            }
+        }
+        return ventas;
+    }
 public static void main(String[] args) {
     try {
         VentaDAO dao = new VentaDAO();
-        Venta v1 = new Venta();
-        v1.setIdCliente(1);
-        v1.setIdEmpleado(1);
-        v1.setFechaVenta(new Date());
-        v1.setTotalVenta(200.75f);
-        dao.crearVenta(v1);
-        System.out.println("Venta creada con éxito!");
+       List<Venta> ventas = dao.leerTodasVentas();
+            System.out.println("Lista de ventas:");
+            for (Venta ven : ventas) {
+                System.out.println("Cliente ID: " + ven.getIdCliente() + 
+                                 ", Empleado ID: " + ven.getIdEmpleado() + 
+                                 ", Fecha: " + ven.getFechaVenta() + 
+                                 ", Total: " + ven.getTotalVenta());
+            }
     } catch (SQLException e) {
         System.err.println("Error: " + e.getMessage());
     }

@@ -8,6 +8,10 @@ import Util.ConexionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Estudiante
@@ -27,15 +31,34 @@ public class UsuarioDAO {
         stmt.executeUpdate();
     }
 }
+    public List<Usuario> leerTodosUsuarios() throws SQLException {
+        String sql = "SELECT * FROM Usuarios";
+        List<Usuario> usuarios = new ArrayList<>();
+
+        try (Connection c = ConexionDB.getConnection();
+             PreparedStatement stmt = c.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setContrasena(rs.getString("contraseña"));
+                usuarios.add(usuario);
+            }
+        }
+        return usuarios;
+    }
 
 public static void main(String[] args) {
     try {
         UsuarioDAO dao = new UsuarioDAO();
-        Usuario u1 = new Usuario();
-        u1.setUsuario("admin");
-        u1.setContrasena("12345");
-        dao.crearUsuario(u1);
-        System.out.println("Usuario creado con éxito!");
+       List<Usuario> usuarios = dao.leerTodosUsuarios();
+            System.out.println("Lista de usuarios:");
+            for (Usuario usu : usuarios) {
+                System.out.println("ID: " + usu.getIdUsuario() + 
+                                 ", Usuario: " + usu.getUsuario() + 
+                                 ", Contraseña: " + usu.getContrasena());
+            }
     } catch (SQLException e) {
         System.err.println("Error: " + e.getMessage());
     }
